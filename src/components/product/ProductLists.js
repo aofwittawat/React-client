@@ -6,7 +6,7 @@ export default class ProductLists extends Component {
     showProduct(){
         
              return this.props.products &&  this.props.products.map(product => (
-                    <ProductItems {...product}/>
+                    <ProductItems key ={product.productId} product = {product} onAddOrder={this.props.onAddOrder}/>
             ))
         
     }
