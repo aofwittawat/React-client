@@ -4,9 +4,7 @@ export default class ProductItems extends Component {
 
       
 
-    doSomething(productName) {
-        console.log(productName);
-    }
+    
 
     render() {
         const {productName, unitPrice, thumbnail} = this.props.product

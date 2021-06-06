@@ -7,9 +7,9 @@ export default class Calculator extends Component {
                 return <li className ="text-end title text-muted">ไม่มีสินค้าค่ะ</li>
         }else{
             return orders.map(order => {
-                return ( <li className="text-end text-success title">
+                return ( <li className="text-end text-success title" key ={order.product.productId}>
                                 {order.product.productName} x {order.quantity} = {order.product.unitPrice * order.quantity}
-                                <button className="btn btn-light btn-sm">X</button>
+                                <button className="btn btn-light btn-sm" onClick={()=>this.props.onDeleteOrder(order.product)}>X</button>
                         </li>)
             })
         }
