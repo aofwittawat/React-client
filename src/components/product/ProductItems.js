@@ -14,9 +14,28 @@ export default class ProductItems extends Component {
                 <img  className="img-fuild img-thumbnail" src={thumbnail} alt={productName} />
                 <h5 className="mt-2">{productName}</h5>
                 <p className="text-end title ">{unitPrice} THB</p>
-                <button type ="button"className="btn btn-block btn-secondary title" onClick ={()=> this.props.onAddOrder(this.props.product)}>
+                
+               { this.props.onAddOrder &&
+               <button type ="button" className="btn btn-block btn-secondary title" onClick ={()=> this.props.onAddOrder(this.props.product)}>
                     ซื้อ
                 </button>
+                }
+
+                
+               { (this.props.onDelProduct || this.props.onEditProduct ) &&
+               <button type ="button" className="btn  btn-info col-5 title">
+                    แก้ไข
+                </button>
+                }
+
+                { (this.props.onDelProduct || this.props.onEditProduct ) &&
+                <button type ="button" className="btn  btn-danger col-5 float-end title" onClick ={()=> this.props.onDelProduct(this.props.product)}>
+                    ลบ
+                </button>
+                }
+
+
+
                 <hr />
             </div>
             

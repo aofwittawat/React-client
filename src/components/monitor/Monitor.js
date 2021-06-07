@@ -43,7 +43,7 @@ export default class Monitor extends Component {
     confirmOrder(){
         const {totalPrice, orders} = this.state
         if(orders && orders.length > 0){
-        axios.post("http://localhost:3001/orders", {orderedDate: new Date(), totalPrice, orders})
+        axios.post("http://localhost:3000/orders", {orderedDate: new Date(), totalPrice, orders})
             .then(res =>{
                 this.setState({totalPrice: 0, orders: [], confirm: true, msg:"บันทึกรายการสั่งซื้อเรียบร้อยแล้ว"})
             })
