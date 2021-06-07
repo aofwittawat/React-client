@@ -27,8 +27,8 @@ export default class Calculator extends Component {
                   {this.showOrders(orders)}
                 </ul>
                 <hr />
-                <button className="btn btn-lg btn-block mb-1 btn-danger title">ยืนยัน</button>
-                <button className="btn btn-lg btn-block btn-secondary title">ยกเลิก</button>
+                <button className="btn btn-lg btn-block mb-1 btn-danger title" onClick ={()=> this.props.onConfirmOrder()}>ยืนยัน</button>
+                <button className="btn btn-lg btn-block btn-secondary title" onClick={()=> this.props.onCancelOrder()}>ยกเลิก</button>
             </div>
         )
     }
